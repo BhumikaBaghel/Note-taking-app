@@ -30,7 +30,10 @@ const RegistrationForm = () => {
     const response = await axios.post(API_BASE_URL, formData);
     if (response.status === 201) {
       toast("registered succesfully!!");
-      window.location.href = "http://localhost:3000/login/";
+       toast("welcome!", res.data.username);
+     setTimeout(() => {
+        window.location.href = "http://localhost:3000/login/";
+      }, 1000);      
       console.log(formData);
     } else {
       window.location.href = "register/";
