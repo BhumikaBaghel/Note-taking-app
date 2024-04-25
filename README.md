@@ -6,7 +6,8 @@
 4.![Screenshot (547)](https://github.com/Bhumika07092001/Bryckel-AI/assets/109783089/b5c6402a-051c-4da9-a13e-97f6d093c98c)
 5.![Screenshot (552)](https://github.com/Bhumika07092001/Bryckel-AI/assets/109783089/a0eaf6f2-8196-4d3e-9d49-a4358a053ed0)
 6.![Screenshot (551)](https://github.com/Bhumika07092001/Bryckel-AI/assets/109783089/41b1330e-1b08-4be0-a0df-accaf41e3a38)
-7.![Screenshot (555)](https://github.com/Bhumika07092001/Bryckel-AI/assets/109783089/4320e828-a283-439c-857b-f1a472831359)
+7.![Screenshot (554)](https://github.com/Bhumika07092001/Bryckel-AI/assets/109783089/3cddcbaa-8a5c-46d9-b66e-7cd3a1672344)
+
 
 
 
