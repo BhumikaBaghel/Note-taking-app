@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/register.css";
 
@@ -42,8 +42,11 @@ const LoginForm = () => {
         username: res.data.username,
         email: res.data.email,
       });
-      toast("registered succesfully!!");
-      window.location.href = "/";
+        toast("welcome!", res.data.username);
+        toast("registered succesfully!!");
+     setTimeout(() => {
+        window.location.href = "/";
+      }, 1000);
     } else {
       window.location.href = "login/";
     }
