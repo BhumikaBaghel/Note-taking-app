@@ -11,6 +11,7 @@ import "../styles/register.css";
 const API_BASE_URL = "http://localhost:8000/notes/register/";
 
 const RegistrationForm = () => {
+  const [profileData, setProfileData] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     username: "",
@@ -30,11 +31,10 @@ const RegistrationForm = () => {
     const response = await axios.post(API_BASE_URL, formData);
     if (response.status === 201) {
       toast("registered succesfully!!");
-       toast("welcome!", res.data.username);
-     setTimeout(() => {
+      setProfileData(true);
+      setTimeout(() => {
         window.location.href = "http://localhost:3000/login/";
-      }, 1000);      
-      console.log(formData);
+      }, 3000);
     } else {
       window.location.href = "register/";
     }
@@ -42,46 +42,62 @@ const RegistrationForm = () => {
 
   return (
     <div className="registration-form-container">
-      <h2>Registration Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
+      {profileData ? (
+        <div>
+          <h1>Thanks for registering</h1>
+          <h2>
+            <strong>Username:</strong>
+            {profileData.username}
+          </h2>
+          <h3>
+            <strong>Email:</strong>
+            {profileData.email}
+          </h3>
         </div>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <a href="http://localhost:3000/login/">
-        <button type="submit">Login</button>
-      </a>
+      ) : (
+        <>
+          <h2>Registration Form</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <button type="submit">Register</button>
+          </form>
+          <a href="http://localhost:3000/login/">
+            <button type="submit">Login</button>
+          </a>
+        </>
+      )}
     </div>
   );
 };
