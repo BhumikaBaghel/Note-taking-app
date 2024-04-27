@@ -4,10 +4,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/register.css";
 
-//login credentials
-//email: catas@gmail.com
-//password:pbkdf2_sha256$720000$MsL5rKuuPWGt4JIPMHmvV2$aveystLyo/c+H04fanoZm6FOHRRjaPNdoMW/A8mjuC4=
-
 const API_BASE_URL = "http://localhost:8000/notes/register/";
 
 const RegistrationForm = () => {
