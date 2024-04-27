@@ -43,11 +43,11 @@ const RegistrationForm = () => {
           <h1>Thanks for registering</h1>
           <h2>
             <strong>Username:</strong>
-            {profileData.username}
+            {formData.username}
           </h2>
           <h3>
             <strong>Email:</strong>
-            {profileData.email}
+            {formData.email}
           </h3>
         </div>
       ) : (
@@ -99,3 +99,4 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
+
