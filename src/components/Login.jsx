@@ -11,11 +11,6 @@ import "../styles/register.css";
 const API_BASE_URL = "http://localhost:8000/notes/login/";
 
 const LoginForm = () => {
-  const [profileData, setProfileData] = useState({
-    username: "",
-    email: "",
-  });
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -38,13 +33,8 @@ const LoginForm = () => {
         `http://localhost:8000/notes/userdetail/${response.data}/`
       );
       console.log("res: ", res.data);
-      setProfileData({
-        username: res.data.username,
-        email: res.data.email,
-      });
-        toast("welcome!", res.data.username);
-        toast("registered succesfully!!");
-     setTimeout(() => {
+      toast("welcome!", res.data.username);
+      setTimeout(() => {
         window.location.href = "/";
       }, 1000);
     } else {
