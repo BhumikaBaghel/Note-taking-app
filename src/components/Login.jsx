@@ -8,7 +8,7 @@ const API_BASE_URL = "http://localhost:8000/notes/login/";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -29,10 +29,10 @@ const LoginForm = () => {
         `http://localhost:8000/notes/userdetail/${response.data}/`
       );
       console.log("res: ", res.data);
-      toast("welcome!", res.data.username);
+      toast("welcome!", res.username);
       setTimeout(() => {
         window.location.href = "/";
-      }, 1000);
+      }, 5000);
     } else {
       window.location.href = "login/";
     }
@@ -45,10 +45,10 @@ const LoginForm = () => {
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            type="username"
+            id="username"
+            name="username"
+            value={formData.username}
             onChange={handleInputChange}
             required
           />
@@ -71,3 +71,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
