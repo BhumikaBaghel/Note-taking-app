@@ -50,7 +50,10 @@ const NotesApp = () => {
 
   const handleEditNote = (id, content) => {
     setEditNoteId(id);
-    setEditNoteContent(content);
+    setEditNoteContent({
+      title: note.title,
+      content: note.content,
+    });
   };
 
   const deleteNote = async (id) => {
@@ -67,20 +70,26 @@ const NotesApp = () => {
       <h1>Note: {note.title}</h1>
       {editNoteId === note.id ? (
         <>
-          <input
-            name="title"
-            type="text"
-            value={editNoteContent.title}
-            onChange={handleEditNoteChange}
-            className="edit-note-input"
-          />
-          <input
-            name="content"
-            type="text"
-            value={editNoteContent.content}
-            onChange={handleEditNoteChange}
-            className="edit-note-input"
-          />
+          <div>
+            <label htmlFor="title">Title:</label>
+            <input
+              name="title"
+              type="text"
+              value={editNoteContent.title}
+              onChange={handleEditNoteChange}
+              className="edit-note-input"
+            />
+          </div>
+          <div>
+            <label htmlFor="content">Content:</label>
+            <input
+              name="content"
+              type="text"
+              value={editNoteContent.content}
+              onChange={handleEditNoteChange}
+              className="edit-note-input"
+            />
+          </div>
           <button onClick={handleEditSaveNote} className="save-button">
             Save
           </button>
