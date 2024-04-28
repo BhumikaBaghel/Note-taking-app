@@ -67,7 +67,7 @@ const NotesApp = () => {
 
   return (
     <div className="notes-container">
-      <h1>Note: {note.title}</h1>
+      <h1> Edit Note: {note.title}</h1>
       {editNoteId === note.id ? (
         <>
           <div>
