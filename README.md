@@ -12,11 +12,3 @@
 10.![Screenshot (562)](https://github.com/Bhumika07092001/Bryckel-AI/assets/109783089/f2842f22-e0b3-429c-b61b-6665e83c7d76)
 
 
-
-
-
-
-
-
-# Bryckel-AI
-Leveraged React ,Django and Postgres to create a notes app, with smooth CRUD operations.
